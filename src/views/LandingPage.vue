@@ -1,17 +1,40 @@
 <template>
   <div class="routes">
-    <RouterLink to="/singup" class="link">Sign Up</RouterLink>
-    <RouterLink to="/login" class="link">Log in</RouterLink>
+    <div class="link" @click="showSignup">Sign Up</div>
+    <div class="link" @click="showLogin">Log in</div>
   </div>
   <section>
   <img alt="Vue logo" src="../assets/pokedex.png" class="logo">
   </section>
+  <section class="form" v-if="signup">
+    <SignUp />
+  </section>
+  <section class="form" v-if="login">
+    <LogIn />
+  </section>
 </template>
 
 <script>
+import SignUp from '../components/SignUp.vue';
+import LogIn from '../components/LogIn.vue'
+
 export default {
   name: 'LandingPage',
- 
+  components: {SignUp, LogIn},
+    data(){
+      return {
+        login: false,
+        signup: false
+    }
+  },
+  methods:{
+    showSignup(){
+      this.signup == true;
+    },
+    showLogin(){
+      this.login == true
+    }
+  }
 }
 </script>
 
