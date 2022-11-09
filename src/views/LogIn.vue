@@ -1,8 +1,8 @@
 <template>
     <form @submit.prevent="handleSubmit">
           
-     <label>Email:</label>
-     <input type="email" v-model="email" required>
+     <label>Username:</label>
+     <input type="email" v-model="username" required>
  
      <label>Password:</label>
      <input type="password" v-model="password" required>
@@ -19,16 +19,16 @@
    name: 'LogIn', 
    data() {
      return {
-        email: '',
+        username: '',
         password: '',
      }
    },
    methods: {
     submit: function () {
-      const path = "http://127.0.0.1:5000/login"; //para hacer el fetch al back
+      const path = "http://127.0.0.1:8000/login"; //para hacer el fetch al back
       axios
         .post(path, {
-            email: this.email,
+            username: this.username,
             password: this.password
         })
         .then((response) => {

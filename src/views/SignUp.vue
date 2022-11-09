@@ -3,8 +3,8 @@
      <label>Name:</label>
      <input type="email" v-model="name" required>
      
-     <label>Email:</label>
-     <input type="email" v-model="email" required>
+     <label>Username:</label>
+     <input type="email" v-model="username" required>
  
      <label>Password:</label>
      <input type="password" v-model="password" required>
@@ -22,17 +22,17 @@
    data() {
      return {
         name:'',
-        email: '',
+        username: '',
         password: '',
      }
    },
    methods: {
     submit: function () {
-      const path = "http://127.0.0.1:5000/register"; //para hacer el fetch al back
+      const path = "http://127.0.0.1:8000/register"; //para hacer el fetch al back
       axios
         .post(path, {
             name: this.name,
-            email: this.email,
+            username: this.username,
             password: this.password
         })
         .then((response) => {
