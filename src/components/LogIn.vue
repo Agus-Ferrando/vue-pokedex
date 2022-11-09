@@ -2,7 +2,7 @@
     <form @submit.prevent="handleSubmit">
           
      <label>Username:</label>
-     <input type="email" v-model="username" required>
+     <input type="text" v-model="username" required>
  
      <label>Password:</label>
      <input type="password" v-model="password" required>
@@ -53,7 +53,7 @@
      border-radius: 10px;
    }
    label {
-     color: #aaa;
+     color: rgb(133, 131, 131);
      display: inline-block;
      margin: 25px 0 15px;
      font-size: 0.6em;
@@ -76,30 +76,12 @@
      width: 100%;
      box-sizing: border-box;
      border: none;
-     border-bottom: 1px solid #ddd;
+     border-bottom: 1px solid rgb(133, 131, 131);
      color: #555;
    }
-     input[type="checkbox"] {
-     display: inline-block;
-     width: 16px;
-     margin: 0 10px 0 0;
-     position: relative;
-     top: 2px;
-   }
-     .pill {
-     display: inline-block;
-     margin: 20px 10px 0 0;
-     padding: 6px 12px;
-     background: #eee;
-     border-radius: 20px;
-     font-size: 12px;
-     letter-spacing: 1px;
-     font-weight: bold;
-     color: #777;
-     cursor: pointer;
-   }
+
    button {
-     background: #4f76b1;
+     background: rgb(161, 40, 40);
      border: 0;
      padding: 10px 20px;
      margin-top: 20px;

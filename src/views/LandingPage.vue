@@ -1,17 +1,20 @@
 <template>
   <div class="routes">
-    <div class="link" @click="showSignup">Sign Up</div>
-    <div class="link" @click="showLogin">Log in</div>
+    <div @click="showSignup" class="link" >Sign Up</div>
+    <div @click="showLogin" class="link" >Log in</div>
   </div>
   <section>
   <img alt="Vue logo" src="../assets/pokedex.png" class="logo">
   </section>
+  
   <section class="form" v-if="signup">
     <SignUp />
   </section>
   <section class="form" v-if="login">
     <LogIn />
   </section>
+
+
 </template>
 
 <script>
@@ -28,11 +31,17 @@ export default {
     }
   },
   methods:{
-    showSignup(){
-      this.signup == true;
+    showSignup(event){
+    if (event) {
+      this.signup = true; 
+      this.login = false;
+    }
     },
-    showLogin(){
-      this.login == true
+    showLogin(event){
+      if (event){
+      this.login = true;
+      this.signup = false;
+    }
     }
   }
 }
@@ -51,6 +60,7 @@ export default {
   text-decoration: none;
   font-size: 1.5em;
   margin: 1em;
+  cursor: pointer;
 }
 
 section{

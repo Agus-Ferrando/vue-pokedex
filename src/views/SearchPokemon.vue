@@ -1,6 +1,7 @@
 <template>
+  <body>
    <main>
-      <h1>THE POKEDEX SEARCHER </h1>
+      <h1>POKEDEX SEARCHER</h1>
       <div class="search-box">
         <input type="text" class="search-bar" v-model="query" @keypress="fetchPokemon" placeholder="Search a pokemon">
       </div>
@@ -29,6 +30,7 @@
 
       </section>
     </main>
+   </body> 
 </template>
 
 <script>
@@ -75,31 +77,23 @@ export default {
 </script>
 
 <style scoped>
-  * {
+body{
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: 'montserrat', sans-serif;
+  background-image: url('../assets/fondo.jpg');
+  background-size: cover; 
+  transition: 0.4s;
   }
 
-  body {
-    font-family: 'montserrat', sans-serif;
-  }
-
-  #app {
-    background-image: url('../assets/fondo.jpg');
-    background-size: cover; 
-    transition: 0.4s;
-  }
-
- 
   h1{
     margin-bottom: 30px;
     text-align: center;
-    color: #8c06a0;
+    color:  rgb(161, 40, 40);
    
   }
-
-  .search-box {
+   .search-box {
     width: 100%;
     margin-bottom: 30px;
   }
@@ -146,7 +140,7 @@ export default {
   }
 
   .poke-box{
-    color:  #8c06a0 ;
+    color:  rgb(161, 40, 40) ;
     font-size: 30px;
     font-weight: 500;
     text-align: center;
@@ -188,7 +182,7 @@ export default {
     height: 80px;
     width: 80px;
     border-radius: 50%;
-    background-color: #8b06a0c2;
+    background-color: rgba(0, 0, 0, 0.692);
     display: flex;
     align-items: center;
     justify-content: center;
